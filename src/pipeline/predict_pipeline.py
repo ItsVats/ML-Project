@@ -38,7 +38,6 @@ class CustomData:
         parental_level_of_education: str,
         lunch: str,
         test_preparation_course: str,
-        math_score: int,
         reading_score: int,
         writing_score: int,
     ):
@@ -47,7 +46,6 @@ class CustomData:
         self.parental_level_of_education = parental_level_of_education
         self.lunch = lunch
         self.test_preparation_course = test_preparation_course
-        self.math_score = math_score
         self.reading_score = reading_score
         self.writing_score = writing_score
 
@@ -59,7 +57,6 @@ class CustomData:
                 'parental level of education': [self.parental_level_of_education],
                 'lunch': [self.lunch],
                 'test preparation course': [self.test_preparation_course],
-                'math score': [self.math_score],
                 'reading score': [self.reading_score],
                 'writing score': [self.writing_score],
             }
