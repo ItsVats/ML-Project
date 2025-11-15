@@ -38,12 +38,6 @@ class DataIngestion:
             data_path = project_root / 'notebook' / 'data' / 'StudentsPerformance.csv'
             logging.info(f"Reading dataset from: {data_path}")
             df = pd.read_csv(data_path)
-          
-            if {'math score', 'reading score', 'writing score'}.issubset(df.columns):
-                df['total score'] = df['math score'] + df['reading score'] + df['writing score']
-            else:
-                logging.warning("Score columns missing; 'total score' not created")
-            logging.info("Read the dataset as dataframe")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
